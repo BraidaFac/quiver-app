@@ -9,6 +9,6 @@ export const redisClientInit = async () => {
 			port: +REDIS_PORT
 		}
 	});
-	client.connect();
+	await client.connect();
 	return client;
 };

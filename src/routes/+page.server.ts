@@ -1,5 +1,6 @@
 import { redisClientInit } from '$lib/utils/redis.js';
 import { API_PASSWORD, API_DEVICE, API_USER, ENDPOINT_API } from '$env/static/private';
+import type { Article } from '$lib/utils/types.utils';
 
 const login = async (fetch) => {
 	const response = await fetch(`${ENDPOINT_API}/auth/login`, {
@@ -43,10 +44,9 @@ export const load = async ({ cookies, depends, fetch }) => {
 	}
 
 	const client = await redisClientInit();
-	//const articulos_string = await client.get('QUIVER');
-	//const articulos: Article[] | null = articulos_string ? JSON.parse(articulos_string) : null;
+	const articulos_string = await client.get('QUIVER');
+	const articulos: Article[] | null = articulos_string ? JSON.parse(articulos_string) : null;
 
 	client.disconnect();
-	const articulos = null;
 	return { token, articulos };
 };

@@ -9,9 +9,11 @@
 	import ModalStock from '$lib/components/ModalStock.svelte';
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 	initializeStores();
+	import ModalCoef from '$lib/components/ModalCoef.svelte';
 
 	const modalRegistry: Record<string, ModalComponent> = {
-		modalStock: { ref: ModalStock }
+		modalStock: { ref: ModalStock },
+		modalCoeficiente: { ref: ModalCoef }
 	};
 	const modalStore = getModalStore();
 </script>

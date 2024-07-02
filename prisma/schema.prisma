@@ -44,5 +44,17 @@ model AuthKey {
   @@map("auth_key")
 }
 
+model Coeficient {
+  id String @id @map("_id") @default(cuid())
+  name String @unique
+  value Float
+  @@map("coeficient")
+}
 
+model Coeficient_Quiver{
+  id String @id @map("_id") @default(cuid())
+  name String @unique
+  value Float
+  @@map("coeficient_quiver")
+}
 

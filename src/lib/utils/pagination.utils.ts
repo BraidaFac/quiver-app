@@ -51,7 +51,6 @@ export async function fetchWithPagination(
 	);
 
 	active_article = await addStock(active_article, token, '004');
-	console.log(active_article);
 
 	return orderProducts(active_article);
 }

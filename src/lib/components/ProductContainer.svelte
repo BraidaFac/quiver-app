@@ -126,7 +126,11 @@
 					<tr>
 						<td>{prod.NOMBRE}</td>
 						<td>{prod.DESCRIPCION_MARCA}</td>
-						<td>${addThousandSeparator(truncarACentena(+prod.PRECIOEFECTIVO.toFixed(0)))}</td>
+						<td
+							>${addThousandSeparator(
+								truncarACentena((+prod.PRECIOVENTA * coef_efect).toFixed(0))
+							)}</td
+						>
 						<td>${addThousandSeparator(truncarACentena(+prod.PRECIOVENTA.toFixed(0)))}</td>
 						<td>{prod.TALLES}</td>
 						<td>{prod.DESCRIPCIONRUBRO}</td>
